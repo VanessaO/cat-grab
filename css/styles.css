@@ -1,0 +1,139 @@
+/*//////////////////////////////////// 
+/////////////// CSS RESET //////////*/
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    margin: 0;
+    font-size: 16px;
+}
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote,
+figure,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: block;
+}
+h1,
+h2,
+h3,
+h4 {
+    font-size: inherit;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    transition: .3s;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+/*//////////////////////////////////// 
+/////////////// END RESET //////////*/
+
+/*//////////////////////////////////// 
+///////// BEGIN CUSTOM CSS /////////*/
+
+/* GLOBAL STYLES ********************
+************************************/
+
+body {
+    border-top: 0.75em solid #EB8156;
+    background-color: #fdf2ee;
+}
+
+/* HEADER ***************************
+************************************/
+header {
+    width: 100%;
+    height: 10%;
+    border: 1px solid red;
+}
+
+#heading-text {
+    margin-top: 0.75em;
+    text-align: center;
+    font-size: 2em;
+}
+
+#logo-heading {
+    font-size: 2em;
+    font-family: 'Chewy', cursive;
+}
+
+#logo-subheading {
+    font-family: 'Arvo', serif;
+}
+
+#navigation {
+    text-align: center;
+}
+
+.nav-item {
+    display: inline-block;
+    text-align: center;
+    font-family: 'Arvo', serif; 
+    font-weight: bold;
+}
+
+#about {
+    border-color: #eb5676;
+}
+
+.button {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    border: 3px solid #eb8156;
+    padding: 0.5em 0.75em;
+    margin: 1em;
+}
+
+.button:after {
+    content: '';
+    border: 3px solid #ebcc56;
+    top: 3px;
+    left: 3px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    color: #f2f2f2;
+    white-space:nowrap;
+}
+
+.button:active {
+  top: 1px;
+  left: 1px;
+}
+
+/* blue border position */
+.button:active:after{
+  top: 2px;
+  left: 2px
+}
+
+/* fill background color */
+.button:hover{
+  background: rgba(235,129,86,1);
+  color: #fdf2ee;
+}
+
