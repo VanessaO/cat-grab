@@ -5,10 +5,14 @@ $(document).ready(function() {
 	});
 
 	$(function() {
-		var searchTerms = ["cats", "cat clothes", "cat kitchenware", "cat crafts"]
+		var searchTerms = ["cats", "cat clothes", "cat kitchenware", "cat crafts"];
+		var clearMain = function(){
+			$(".main").html("");
+		}
     	
     	$('#general').click(function (event) {
-        event.preventDefault();
+    	clearMain();
+		event.preventDefault();
         var term = searchTerms[0];
         getRequest(term);
     	});
@@ -57,22 +61,21 @@ $(document).ready(function() {
 	}
 
 	function showResults(item) {
-		//$(".main").html("");
-		//console.log(item);
 
-		var listingBlock = $('.store-item').clone();
+		var listingBlock = $('.templates .store-item').clone();
 
 		var itemImage = listingBlock.find('.item-img');
-		itemImage.attr('src', item.Images[0].url_75x75); // Perhaps try appending html instead?
+		itemImage.attr('src', item.Images[0].url_75x75); // Perhaps try appending html instead? 
+														// Or does it have to do with clearing the HTML of .main div?
 		console.log(item.Images[0].url_75x75); // WORKS
 
-		var listingTitle = listingBlock.find('#title');
+		var listingTitle = listingBlock.find('.title');
 		listingTitle.text(item.title);
-		//console.log(item.title); // WORKS
+		console.log(item.title); // WORKS
 
 		var listingLink = listingBlock.find('.listing');
 		listingLink.attr('href', item.url);
-		//console.log(item.url); // WORKS
+		console.log(item.url); // WORKS
 
 		return listingBlock;
 	}
