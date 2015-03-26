@@ -12,7 +12,7 @@ $(document).ready(function() {
     	
     	$('#general').click(function (event) {
 	    	clearMain();
-			//event.preventDefault();
+			event.preventDefault();
 	        var term = searchTerms[0];
 	        getRequest(term);
     	});
@@ -54,7 +54,7 @@ $(document).ready(function() {
 			$.each(data.results, function(i, item) {
 				var results = showResults(item);
 				//console.log(inspiration);
-				$('.main').append(results);
+				$('.main').append(results).hide().fadeIn(300);
 			});
 		})
 		.fail(function(jqXHR, error, errorThrown){
@@ -69,11 +69,9 @@ $(document).ready(function() {
 
 		var itemImage = listingBlock.find('.item-img');
 		itemImage.attr('src', item.Images[0].url_170x135);
-		//console.log(item.Images[0].url_75x75); // WORKS
 
 		var listingTitle = listingBlock.find('.title');
 		listingTitle.text(item.title);
-		//console.log(item.title); // WORKS
 
 		var listingLink = listingBlock.find('.listing');
 		listingLink.attr('href', item.url);

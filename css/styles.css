@@ -194,6 +194,10 @@ header {
     overflow: hidden;
 }
 
+.title:hover {
+    color: #eb5676;
+}
+
 .item-info button {
     display: inline-block;
     position: relative;
