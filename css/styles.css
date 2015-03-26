@@ -72,7 +72,7 @@ header {
     font-size: 2em;
 }
 
-#logo-heading {
+#logo-heading, .main > p {
     font-size: 2em;
     font-family: 'Chewy', cursive;
 }
@@ -144,6 +144,10 @@ header {
     padding: 2em;
 }
 
+.main p {
+    text-align: center;
+}
+
 .store-item {
     height: 20em;
     width: 15em;
@@ -163,7 +167,7 @@ header {
 
 .img-box:hover {
     background-image: url("../images/eyeball.png");
-    background-size: 50%;
+    background-size: 30%;
     background-repeat: no-repeat;
     background-position: center;
     opacity: 50;
@@ -213,4 +217,8 @@ header {
 
 .item-info button:focus {
     outline: none;
+}
+
+.templates {
+    display: none;
 }
