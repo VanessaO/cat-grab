@@ -11,28 +11,31 @@ $(document).ready(function() {
 		}
     	
     	$('#general').click(function (event) {
-    	clearMain();
-		event.preventDefault();
-        var term = searchTerms[0];
-        getRequest(term);
+	    	clearMain();
+			//event.preventDefault();
+	        var term = searchTerms[0];
+	        getRequest(term);
     	});
 
     	$('#clothing').click(function (event) {
-        event.preventDefault();
-        var term = searchTerms[1];
-        getRequest(term);
+	    	clearMain();
+	        event.preventDefault();
+	        var term = searchTerms[1];
+	        getRequest(term);
     	});
 
     	$('#kitchenware').click(function (event) {
-        event.preventDefault();
-        var term = searchTerms[2];
-        getRequest(term);
+	    	clearMain();
+	        event.preventDefault();
+	        var term = searchTerms[2];
+	        getRequest(term);
     	});
 
     	$('#crafts').click(function (event) {
-        event.preventDefault();
-        var term = searchTerms[3];
-        getRequest(term);
+	    	clearMain();
+	        event.preventDefault();
+	        var term = searchTerms[3];
+	        getRequest(term);
     	});
 	});
 
@@ -62,20 +65,22 @@ $(document).ready(function() {
 
 	function showResults(item) {
 
-		var listingBlock = $('.templates .store-item').clone();
+		var listingBlock = $('.templates .store-item').clone(); // .templates had to be selected before 9 would show up??
 
 		var itemImage = listingBlock.find('.item-img');
-		itemImage.attr('src', item.Images[0].url_75x75); // Perhaps try appending html instead? 
-														// Or does it have to do with clearing the HTML of .main div?
-		console.log(item.Images[0].url_75x75); // WORKS
+		itemImage.attr('src', item.Images[0].url_170x135);
+		//console.log(item.Images[0].url_75x75); // WORKS
 
 		var listingTitle = listingBlock.find('.title');
 		listingTitle.text(item.title);
-		console.log(item.title); // WORKS
+		//console.log(item.title); // WORKS
 
 		var listingLink = listingBlock.find('.listing');
 		listingLink.attr('href', item.url);
-		console.log(item.url); // WORKS
+		//console.log(item.url); // WORKS
+
+		var listingPrice = listingBlock.find('.price');
+		listingPrice.text(item.price);
 
 		return listingBlock;
 	}
