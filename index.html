@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link href='http://fonts.googleapis.com/css?family=Arvo|Chewy' rel='stylesheet' type='text/css'>
 	<!--Javascript-->
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/apps.js"></script>
 </head>
 <body>
 	<!--Contains logo, title, and subtitle-->
@@ -27,35 +29,37 @@
 				<a href="#" class="button" id="about">About</a>
 			</li>
 			<li class="nav-item">
-				<a href="#" class="button">General</a>
+				<a href="#" class="button" id="general">General</a>
 			</li>
 			<li class="nav-item">
-				<a href="#" class="button">Clothing</a>
+				<a href="#" class="button" id="clothing">Clothing</a>
 			</li>
 			<li class="nav-item">
-				<a href="#" class="button">Kitcheware</a>
+				<a href="#" class="button" id="kitchenware">Kitchenware</a>
 			</li>
 			<li class="nav-item">
-				<a href="#" class="button">Crafts</a>
+				<a href="#" class="button" id="crafts">Crafts</a>
 			</li>
 		</ul>
 		</nav>
 	</header>
 	<section class="main">
+		<p>Choose from a category above...</p>
+	</section>
+	<div class="templates">
 		<div class="store-item">
 			<div class="img-box">
 				<img class="item-img" src="" alt="">
 				<a href="" class="listing"></a>
 			</div>
 			<div class="item-info">
-					<p id="title"><a href="" class="listing">Cat Bag Made in Taiwan Super Fshsionnnnnnnnnnnnnn</a></p>
-				
+				<p id="title"><a href="" class="listing"></a></p>
 				<p>$<span id="price">15.30</span></p>
 				<p id="shop"><a href="" id="shop"></a></p>
-				<button>Like</button>
-				<button>Add to Etsy Cart</button>
+				<button id="like">&#10084;</button>
+				<button id="cart">Add to Etsy Cart</button>
 			</div>
 		</div>
-	</section>
+	</div>
 </body>
 </html>
