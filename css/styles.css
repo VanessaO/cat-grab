@@ -57,6 +57,7 @@ img {
 body {
     border-top: 0.50em solid #EB8156;
     background-color: #fdf2ee;
+    background-image: url('../images/debut-light.png');
 }
 
 /* HEADER ***************************
@@ -79,6 +80,62 @@ header {
 
 #logo-subheading {
     font-family: 'Arvo', serif;
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(235, 129, 86, 0.97);
+    z-index: 9999;
+    color: #fdf2ee; 
+    /* Hides overlay */
+    display: none;
+}
+
+.overlay-close {
+    float: right;
+    margin: 0.75em;
+    font-size: 5em;
+    color: #fdf2ee; 
+    background: rgba(235, 129, 86, 0.97);
+    border: none;
+    cursor: pointer;
+}
+
+.overlay-close:focus {
+    outline: none;
+}
+
+.overlay-data {
+    height: 50%;
+    width: 50%;
+    margin: 0 auto;
+    /* Centers div */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.overlay-data h1 {
+    color: #ebcc56;
+    font-size: 5em;
+    font-family: 'Chewy', cursive;
+}
+
+.overlay-data h2 {
+    font-size: 3em;
+    font-family: 'Arvo', serif;
+}
+
+.overlay-data p {
+    font-size: 2em;
+    font-family: 'Arvo', serif;
+    margin: 1em 0;
 }
 
 #navigation {

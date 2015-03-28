@@ -1,7 +1,11 @@
 $(document).ready(function() {
 	
 	$('#about').click(function(){
-		alert('Cat Grab is a cat gift generator');
+		$('.overlay').fadeIn(600);
+	});
+
+	$('.overlay-close').click(function(){
+		$('.overlay').fadeOut(600);
 	});
 
 	$(function() {
@@ -53,7 +57,6 @@ $(document).ready(function() {
 			//For each...
 			$.each(data.results, function(i, item) {
 				var results = showResults(item);
-				//console.log(inspiration);
 				$('.main').append(results).hide().fadeIn(300);
 			});
 		})
@@ -75,11 +78,18 @@ $(document).ready(function() {
 
 		var listingLink = listingBlock.find('.listing');
 		listingLink.attr('href', item.url);
-		//console.log(item.url); // WORKS
 
 		var listingPrice = listingBlock.find('.price');
-		listingPrice.text(item.price);
+		listingPrice.text(item.price + " " + item.currency_code);
 
 		return listingBlock;
 	}
+
+
+	//To do: 
+		//About page
+		//Find better keywords
+		//New menu?
+		//Larger item view?
+		//POST request for likes and cart
 });
