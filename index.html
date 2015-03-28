@@ -6,49 +6,56 @@
 	<!--Stylesheets-->
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link href='http://fonts.googleapis.com/css?family=Arvo|Chewy' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<!--Javascript-->
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="js/apps.js"></script>
 </head>
 <body>
-	<!--Contains logo, title, and subtitle-->
+	<!--Contains "about" section overlay-->
 	<div id="about-info" class="overlay">
-			<button type="button" class="overlay-close">X</button>
-			<div class="overlay-data">
-				<h1>CAT GRAB</h1>
-				<h2>The cat gift generator</h2>
-				<p>Cat Grab makes it faster and easier to find the perfect cat-themed gifts off Etsy.</p>
-				<p>Search by category or hit Meow! to let us chose something for you!</p>
-			</div>
+		<button type="button" class="overlay-close">X</button>
+		<div class="overlay-data">
+			<h1>CAT GRAB</h1>
+			<h2>The cat gift generator</h2>
+			<p>Cat Grab makes it faster and easier to find the perfect cat-themed gifts off Etsy.</p>
 		</div>
+	</div>
+	
+	<!--Contains heading and navigation-->
 	<header>
+		<!--Contains logo, title, and subtitle-->
 		<div id="heading-text">
 			<h1 id="logo-heading">Cat Grab</h1> 
 			<h2 id="logo-subheading">the cat gift generator</h2>
 		</div>
-		<nav id="navigation" class="content">
-		<ul>
-			<li class="nav-item">
-				<a href="#" class="button overlay-open" id="about">About</a>
-			</li>
-			<li class="nav-item">
-				<a href="#" class="button" id="general">General</a>
-			</li>
-			<li class="nav-item">
-				<a href="#" class="button" id="clothing">Clothing</a>
-			</li>
-			<li class="nav-item">
-				<a href="#" class="button" id="kitchenware">Kitchenware</a>
-			</li>
-			<li class="nav-item">
-				<a href="#" class="button" id="crafts">Crafts</a>
-			</li>
-		</ul>
+		<!--Contains navigation-->
+		<nav id="navigation">
+			<ul>
+				<li class="nav-item">
+					<a href="#" class="button overlay-open" id="about">About</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="button" id="general">General</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="button" id="clothing">Clothing</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="button" id="kitchenware">Kitchenware</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="button" id="crafts">Crafts</a>
+				</li>
+			</ul>
 		</nav>
-	</header>
-	<section class="main">
 		<p>Choose from a category above...</p>
-	</section>
+	</header>
+
+	<!--Main section-->
+	<section class="main"></section>
+
+	<!--Contains template for item listing-->
 	<div class="templates">
 		<div class="store-item">
 			<div class="img-box">
@@ -60,10 +67,19 @@
 				<a href="" class="listing"><p class="title">Cat thingy magig tote bag fun things</p></a>
 				<p>$<span class="price">15.30</span></p>
 				<p class="shop"><a href="" class="shopLink"></a></p>
+				<!--
 				<button class="like">&#10084;</button>
 				<button class="cart">Add to Etsy Cart</button>
+				-->
 			</div>
 		</div>
 	</div>
+
+	<!--Contains copyright and contact links-->
+	<footer>
+		<p>Made with &#10084; by Vanessa Ogbuehi</p>
+		<a href="mailto:va.ogbuehi@gmail.com"><i class="fa fa-envelope-o fa-lg"></i></a>
+		<a href="https://github.com/VanessaO"><i class="fa fa-github-alt fa-lg"></i></a>
+	</footer>
 </body>
 </html>

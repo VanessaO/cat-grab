@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	
+	//SHOW-HIDE "ABOUT" OVERLAY
 	$('#about').click(function(){
 		$('.overlay').fadeIn(600);
 	});
@@ -8,8 +9,9 @@ $(document).ready(function() {
 		$('.overlay').fadeOut(600);
 	});
 
+	//GENERATES SEARCH TERM FOR EACH CATEGORY
 	$(function() {
-		var searchTerms = ["cats", "cat clothes", "cat kitchenware", "cat crafts"];
+		var searchTerms = ["cat", "cat clothing", "cat kitchenware", "cat crafts"];
 		var clearMain = function(){
 			$(".main").html("");
 		}
@@ -43,6 +45,7 @@ $(document).ready(function() {
     	});
 	});
 
+	//SENDS REQUEST TO ETSY API AND APPENDS RESULTS
 	function getRequest(term) {
 	    var key = "qtsni0uvpdyn1qg4bbpn1wc6";
 	    var url = "https://openapi.etsy.com/v2/listings/active.js?keywords=" + term + "&limit=9&includes=Images:1&api_key=" + key;
@@ -57,15 +60,13 @@ $(document).ready(function() {
 			//For each...
 			$.each(data.results, function(i, item) {
 				var results = showResults(item);
-				$('.main').append(results).hide().fadeIn(300);
+				$('header p').hide();
+				$('.main').append(results).fadeIn(300);
 			});
-		})
-		.fail(function(jqXHR, error, errorThrown){
-			//var errorElem = showError(error);
-			//console.log(errorElem);
 		});
 	}
 
+	//FORMATS REQUESTED DATA INTO .STORE-ITEM
 	function showResults(item) {
 
 		var listingBlock = $('.templates .store-item').clone(); // .templates had to be selected before 9 would show up??
@@ -87,7 +88,6 @@ $(document).ready(function() {
 
 
 	//To do: 
-		//About page
 		//Find better keywords
 		//New menu?
 		//Larger item view?

@@ -67,6 +67,12 @@ header {
     height: 10%;
 }
 
+header p {
+    margin-top: 1em;
+    text-align: center;
+    font-family: 'Arvo', serif;
+}
+
 #heading-text {
     margin-top: 0.75em;
     text-align: center;
@@ -81,6 +87,9 @@ header {
 #logo-subheading {
     font-family: 'Arvo', serif;
 }
+
+/* "ABOUT" OVERLAY ******************
+************************************/
 
 .overlay {
     position: fixed;
@@ -138,6 +147,9 @@ header {
     margin: 1em 0;
 }
 
+/* NAVIGATION ***********************
+************************************/
+
 #navigation {
     text-align: center;
 }
@@ -149,16 +161,12 @@ header {
     font-weight: bold;
 }
 
-#about {
-    border-color: #eb5676;
-}
-
 .button {
     display: inline-block;
     position: relative;
     text-decoration: none;
-    color: #333;
-    border: 3px solid #eb8156;
+    color: #fdf2ee;
+    background-color: #eb8156;
     padding: 0.5em 0.75em;
     margin: 1em;
 }
@@ -186,29 +194,20 @@ header {
   left: 2px
 }
 
-.button:hover{
-  background: rgba(235,129,86,1);
-  color: #fdf2ee;
-}
-
-/* MAIN ***************************
+/* MAIN *****************************
 ************************************/
 
 .main {
     background-color: #ebcc56;
-    width: 75%;
+    width: 72%;
     margin: 1.50em auto;
     padding: 2em;
-}
-
-.main p {
-    text-align: center;
+    display: none;
 }
 
 .store-item {
-    height: 20em;
-    width: 15em;
-    border: 1px solid #000; 
+    height: 17em;
+    width: 15em; 
     padding: 1em;
     margin: 1em;
     display: inline-block;
@@ -221,21 +220,8 @@ header {
     height: 60%;
 }
 
-.img-box:hover {
-    background-image: url("../images/eyeball.png");
-    background-size: 30%;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 50;
-    cursor: pointer;
-}
-
-.img-box:hover, .item-info button {
-    cursor: pointer;
-}
-
 .item-info {
-    margin-top: 1em;
+    margin-top: 2em;
     text-align: center;
     font-size: 1.25em;
     font-family: 'Arvo', serif;
@@ -255,6 +241,8 @@ header {
     color: #eb5676;
 }
 
+/* ITEM BUTTONS (LIKE & CART) *******
+****[VOID]**************************/
 .item-info button {
     display: inline-block;
     position: relative;
@@ -279,6 +267,26 @@ header {
     outline: none;
 }
 
+/* FOOTER ***************************
+************************************/
+
+footer {
+    padding: 1em 0;
+    font-family: 'Chewy', cursive;
+    font-size: 1em;
+    text-align: center;
+}
+
+footer i {
+    display: inline-block;
+    margin-right: 0.5em;
+    cursor: pointer;
+}
+
+/* TEMPLATES ************************
+************************************/
+
 .templates {
     display: none;
 }
+
