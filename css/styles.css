@@ -57,6 +57,7 @@ img {
 body {
     border-top: 0.50em solid #EB8156;
     background-color: #fdf2ee;
+    background-image: url('../images/debut-light.png');
 }
 
 /* HEADER ***************************
@@ -64,6 +65,12 @@ body {
 header {
     width: 100%;
     height: 10%;
+}
+
+header p {
+    margin-top: 1em;
+    text-align: center;
+    font-family: 'Arvo', serif;
 }
 
 #heading-text {
@@ -81,6 +88,68 @@ header {
     font-family: 'Arvo', serif;
 }
 
+/* "ABOUT" OVERLAY ******************
+************************************/
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(235, 129, 86, 0.97);
+    z-index: 9999;
+    color: #fdf2ee; 
+    /* Hides overlay */
+    display: none;
+}
+
+.overlay-close {
+    float: right;
+    margin: 0.75em;
+    font-size: 5em;
+    color: #fdf2ee; 
+    background: rgba(235, 129, 86, 0.97);
+    border: none;
+    cursor: pointer;
+}
+
+.overlay-close:focus {
+    outline: none;
+}
+
+.overlay-data {
+    height: 50%;
+    width: 50%;
+    margin: 0 auto;
+    /* Centers div */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.overlay-data h1 {
+    color: #ebcc56;
+    font-size: 5em;
+    font-family: 'Chewy', cursive;
+}
+
+.overlay-data h2 {
+    font-size: 3em;
+    font-family: 'Arvo', serif;
+}
+
+.overlay-data p {
+    font-size: 2em;
+    font-family: 'Arvo', serif;
+    margin: 1em 0;
+}
+
+/* NAVIGATION ***********************
+************************************/
+
 #navigation {
     text-align: center;
 }
@@ -92,16 +161,12 @@ header {
     font-weight: bold;
 }
 
-#about {
-    border-color: #eb5676;
-}
-
 .button {
     display: inline-block;
     position: relative;
     text-decoration: none;
-    color: #333;
-    border: 3px solid #eb8156;
+    color: #fdf2ee;
+    background-color: #eb8156;
     padding: 0.5em 0.75em;
     margin: 1em;
 }
@@ -129,29 +194,20 @@ header {
   left: 2px
 }
 
-.button:hover{
-  background: rgba(235,129,86,1);
-  color: #fdf2ee;
-}
-
-/* MAIN ***************************
+/* MAIN *****************************
 ************************************/
 
 .main {
     background-color: #ebcc56;
-    width: 75%;
+    width: 72%;
     margin: 1.50em auto;
     padding: 2em;
-}
-
-.main p {
-    text-align: center;
+    display: none;
 }
 
 .store-item {
-    height: 20em;
-    width: 15em;
-    border: 1px solid #000; 
+    height: 17em;
+    width: 15em; 
     padding: 1em;
     margin: 1em;
     display: inline-block;
@@ -162,24 +218,10 @@ header {
 .img-box {
     width: 100%;
     height: 60%;
-    background-color: skyblue;
-}
-
-.img-box:hover {
-    background-image: url("../images/eyeball.png");
-    background-size: 30%;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 50;
-    cursor: pointer;
-}
-
-.img-box:hover, .item-info button {
-    cursor: pointer;
 }
 
 .item-info {
-    margin-top: 1em;
+    margin-top: 2em;
     text-align: center;
     font-size: 1.25em;
     font-family: 'Arvo', serif;
@@ -187,7 +229,7 @@ header {
     line-height: 1.50em;
 }
 
-#title {
+.title {
     white-space: nowrap;
     font-weight: bold;
     text-overflow: ellipsis;
@@ -195,6 +237,12 @@ header {
     overflow: hidden;
 }
 
+.title:hover {
+    color: #eb5676;
+}
+
+/* ITEM BUTTONS (LIKE & CART) *******
+****[VOID]**************************/
 .item-info button {
     display: inline-block;
     position: relative;
@@ -219,6 +267,26 @@ header {
     outline: none;
 }
 
+/* FOOTER ***************************
+************************************/
+
+footer {
+    padding: 1em 0;
+    font-family: 'Chewy', cursive;
+    font-size: 1em;
+    text-align: center;
+}
+
+footer i {
+    display: inline-block;
+    margin-right: 0.5em;
+    cursor: pointer;
+}
+
+/* TEMPLATES ************************
+************************************/
+
 .templates {
     display: none;
 }
+

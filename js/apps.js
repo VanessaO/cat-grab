@@ -1,37 +1,51 @@
 $(document).ready(function() {
 	
+	//SHOW-HIDE "ABOUT" OVERLAY
 	$('#about').click(function(){
-		alert('Cat Grab is a cat gift generator');
+		$('.overlay').fadeIn(600);
 	});
 
+	$('.overlay-close').click(function(){
+		$('.overlay').fadeOut(600);
+	});
+
+	//GENERATES SEARCH TERM FOR EACH CATEGORY
 	$(function() {
-		var searchTerms = ["cats", "cat clothes", "cat kitchenware", "cat crafts"]
+		var searchTerms = ["cat", "cat clothing", "cat kitchenware", "cat crafts"];
+		var clearMain = function(){
+			$(".main").html("");
+		}
     	
     	$('#general').click(function (event) {
-        event.preventDefault();
-        var term = searchTerms[0];
-        getRequest(term);
+	    	clearMain();
+			event.preventDefault();
+	        var term = searchTerms[0];
+	        getRequest(term);
     	});
 
     	$('#clothing').click(function (event) {
-        event.preventDefault();
-        var term = searchTerms[1];
-        getRequest(term);
+	    	clearMain();
+	        event.preventDefault();
+	        var term = searchTerms[1];
+	        getRequest(term);
     	});
 
     	$('#kitchenware').click(function (event) {
-        event.preventDefault();
-        var term = searchTerms[2];
-        getRequest(term);
+	    	clearMain();
+	        event.preventDefault();
+	        var term = searchTerms[2];
+	        getRequest(term);
     	});
 
     	$('#crafts').click(function (event) {
-        event.preventDefault();
-        var term = searchTerms[3];
-        getRequest(term);
+	    	clearMain();
+	        event.preventDefault();
+	        var term = searchTerms[3];
+	        getRequest(term);
     	});
 	});
 
+	//SENDS REQUEST TO ETSY API AND APPENDS RESULTS
 	function getRequest(term) {
 	    var key = "qtsni0uvpdyn1qg4bbpn1wc6";
 	    var url = "https://openapi.etsy.com/v2/listings/active.js?keywords=" + term + "&limit=9&includes=Images:1&api_key=" + key;
@@ -46,34 +60,36 @@ $(document).ready(function() {
 			//For each...
 			$.each(data.results, function(i, item) {
 				var results = showResults(item);
-				//console.log(inspiration);
-				$('.main').append(results);
+				$('header p').hide();
+				$('.main').append(results).fadeIn(300);
 			});
-		})
-		.fail(function(jqXHR, error, errorThrown){
-			//var errorElem = showError(error);
-			//console.log(errorElem);
 		});
 	}
 
+	//FORMATS REQUESTED DATA INTO .STORE-ITEM
 	function showResults(item) {
-		//$(".main").html("");
-		//console.log(item);
 
-		var listingBlock = $('.store-item').clone();
+		var listingBlock = $('.templates .store-item').clone(); // .templates had to be selected before 9 would show up??
 
 		var itemImage = listingBlock.find('.item-img');
-		itemImage.attr('src', item.Images[0].url_75x75); // Perhaps try appending html instead?
-		console.log(item.Images[0].url_75x75); // WORKS
+		itemImage.attr('src', item.Images[0].url_170x135);
 
-		var listingTitle = listingBlock.find('#title');
+		var listingTitle = listingBlock.find('.title');
 		listingTitle.text(item.title);
-		//console.log(item.title); // WORKS
 
 		var listingLink = listingBlock.find('.listing');
 		listingLink.attr('href', item.url);
-		//console.log(item.url); // WORKS
+
+		var listingPrice = listingBlock.find('.price');
+		listingPrice.text(item.price + " " + item.currency_code);
 
 		return listingBlock;
 	}
+
+
+	//To do: 
+		//Find better keywords
+		//New menu?
+		//Larger item view?
+		//POST request for likes and cart
 });
